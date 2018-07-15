@@ -1,0 +1,5 @@
+.gitignore
+.idea/
+/update-spark-table-metadata.iml
+target/
+spark-warehouse/
