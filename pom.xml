@@ -20,7 +20,7 @@
     <java.version>1.8</java.version>
     <scala.binary.version>2.11</scala.binary.version>
     <scala.version>2.11.8</scala.version>
-    <spark.version>2.1.0</spark.version>
+    <spark.version>2.2.0</spark.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <skip.shade>package</skip.shade>
   </properties>
@@ -148,7 +148,7 @@
     <!-- https://mvnrepository.com/artifact/org.scalatest/scalatest -->
     <dependency>
       <groupId>org.scalatest</groupId>
-    <artifactId>scalatest_${scala.binary.version}</artifactId>
+      <artifactId>scalatest_${scala.binary.version}</artifactId>
       <version>3.0.5</version>
       <scope>test</scope>
     </dependency>
@@ -160,35 +160,11 @@
       <version>${spark.version}</version>
     </dependency>
 
-  </dependencies>
+    <dependency>
+      <groupId>org.apache.spark</groupId>
+      <artifactId>spark-mllib_${scala.binary.version}</artifactId>
+      <version>${spark.version}</version>
+    </dependency>
 
-  <profiles>
-    <profile>
-      <activation>
-        <activeByDefault>true</activeByDefault>
-      </activation>
-      <id>dev</id>
-      <properties>
-        <scala.binary.version>2.11</scala.binary.version>
-        <scala.version>2.11.8</scala.version>
-        <spark.version>2.2.0</spark.version>
-      </properties>
-    </profile>
-    <profile>
-      <id>qa</id>
-      <properties>
-        <scala.binary.version>2.11</scala.binary.version>
-        <scala.version>2.11.8</scala.version>
-        <spark.version>2.2.0</spark.version>
-      </properties>
-    </profile>
-    <profile>
-      <id>prod</id>
-      <properties>
-        <scala.binary.version>2.11</scala.binary.version>
-        <scala.version>2.11.8</scala.version>
-        <spark.version>2.2.0</spark.version>
-      </properties>
-    </profile>
-  </profiles>
+  </dependencies>
 </project>
